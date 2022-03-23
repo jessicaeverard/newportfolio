@@ -12,3 +12,8 @@ env/lib/*
 env/pyvenv.cfg
 
 geckodriver.exe
+actualwebsite/__pycache__/
+
+portfolio/__pycache__/
+
+*.pyc
