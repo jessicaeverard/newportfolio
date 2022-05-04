@@ -10,7 +10,7 @@
 
               <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-          <!--I        <metamport materialize.css-->
+          <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="static/actualwebsite/materialize/css/materialize.css"  media="screen,projection"/>
         <link rel="stylesheet" href="{% static 'admin/css/style.css' %}">
     </head>
@@ -83,9 +83,17 @@ background-color: lightpink;
   }
 
 #nav {
-
 position: fixed;
+}
 
+.card{
+  width: 300px;
+ }
+
+.projectcontainer{
+ display: flex;
+justify-content: center;
+margin-top: 250px;
 }
 
     </style>
@@ -114,7 +122,7 @@ position: fixed;
         <div id="aboutbox">
        <img id="aboutpic" src="{% static 'admin/img/pic.JPG' %}">
               <div class="card-panel teal">
-                <span class="white-text"> i can code, sort of.
+                <span class="white-text"> 18 years old. Based in London
                 </span>
               </div>
 
@@ -123,7 +131,36 @@ position: fixed;
 
     <section id="projects">
         <h2 class="title"> Experience </h2>
-            
+          <div class="projectcontainer">
+            <div class="row">
+                <div class="col s12 m6">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="">
+                      <span class="card-title">Card Title</span>
+                      <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                    </div>
+                    <div class="card-content">
+                      <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12 m6">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="">
+                      <span class="card-title">Card Title</span>
+                      <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                    </div>
+                    <div class="card-content">
+                      <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
     </section>
 
     <section id="contact">
