@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 {% load static %}
+{% load apis %}
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,7 +49,7 @@ section {
 .hero-text {
   text-align: center;
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
@@ -100,7 +101,7 @@ margin-top: 250px;
     <section id="home">
        <nav>
         <div class="nav-wrapper">
-          <ul id="nav" class="right hide-on-med-and-down">
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
             <li><a href="#home">Home</a></li>
             <li><a href="#aboutme">About Me</a></li>
             <li><a href="#projects">Projects</a></li>
@@ -113,12 +114,14 @@ margin-top: 250px;
       <div class="hero-text">
         <h1>Jess Everard</h1>
         <h5>Software Developer</h5>
+          <img id="github" src="{% static 'admin/img/Octocat.jpg' %}">
       </div>
     </div>
     </section>
     <section id="aboutme">
 
       <h2 class ="title">About me</h2>
+      <p>{% random_joke %}</p>
         <div id="aboutbox">
        <img id="aboutpic" src="{% static 'admin/img/pic.JPG' %}">
               <div class="card-panel teal">
