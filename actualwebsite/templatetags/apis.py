@@ -5,7 +5,7 @@ import requests
 
 @register.simple_tag
 def random_joke():
-    url = "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=racist,sexist,explicit"
+    url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=racist,sexist,explicit"
 
     payload={}
     headers = {}
