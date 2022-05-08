@@ -15,7 +15,7 @@ def random_joke():
     if response['type'] == 'twopart':
         setup = (response['setup'])
         delivery = (response['delivery'])
-        return (setup, delivery)
+        return setup, delivery
     else:
         joke = (response['joke'])
         return joke
