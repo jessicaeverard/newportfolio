@@ -19,93 +19,109 @@
     <style>
     html{
         scroll-snap-type: y mandatory;
-
     }
 
-section {
-  height: 100vh;
-  width: 100vw;
-  scroll-snap-align: start;
-  overflow: hidden;
-}
+    section {
+      height: 100vh;
+      width: 100vw;
+      scroll-snap-align: start;
+      overflow: hidden;
+    }
 
-/* The hero image */
-.hero-image {
-  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("static/admin/img/code.jpg");
+    .hero-image {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("static/admin/img/code.jpg");
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
 
-  /* Set a specific height */
-  height: 100%;
+    .hero-text {
+      text-align: center;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+    }
 
-  /* Position and center the image to scale nicely on all screens */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+    .socialbuttons {
+      text-align: center;
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+    }
 
-}
+    .socialbutton{
+      border: 2px solid white;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      background-color: transparent;
+      cursor: pointer;
+    }
 
-/* Place text in the middle of the image */
-.hero-text {
-  text-align: center;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-}
+    .socialbutton:hover {
+      background-color: #009688;
+      color: white;
+    }
 
-.title{
-  text-align: center;
+    .title{
+      text-align: center;
+    }
 
-}
+    #aboutpic{
+      height:400px;
+    }
 
-#aboutpic{
-  height:400px;
-  }
+    #aboutbox{
+      display: flex;
+      padding-top: 100px;
+      justify-content: space-evenly;
+    }
 
-#aboutbox{
-  display: flex;
-padding-top: 100px;
-justify-content: space-evenly;
+    #aboutme{
+      background-color: lightblue;
+    }
 
-}
+    #experience{
+      background-color: lightgrey;
+    }
 
-#aboutme{
-  background-color: lightblue;
-  }
+    #projects{
+    background-color: lightpink;
+    }
 
-#experience{
-  background-color: lightgrey;
-}
+    #contact{
+      background-color: lightgreen;
+    }
 
-#projects{
-background-color: lightpink;
-}
+    #nav {
+    position: fixed;
+    }
 
-#contact{
-  background-color: lightgreen;
-  }
+    .card{
+      width: 300px;
+     }
 
-#nav {
-position: fixed;
-}
+    .projectcontainer{
+     display: flex;
+    justify-content: center;
+    margin-top: 250px;
+    }
 
-.card{
-  width: 300px;
- }
-
-.projectcontainer{
- display: flex;
-justify-content: center;
-margin-top: 250px;
-}
-
-#github{
- width: 50px;
- height: 50px;
-
- }
+    #github{
+     width: 50px;
+     height: 50px;
+    }
 
     </style>
     <section id="home">
@@ -125,10 +141,18 @@ margin-top: 250px;
       <div class="hero-text">
         <h1>Jess Everard</h1>
         <h5>Software Developer</h5>
-          <a href="https://github.com/jessicaeverard" target="_blank">
-          <img id="github" src="{% static 'admin/img/Octocat.jpg' %}">
-          </a>
       </div>
+         <div class="socialbuttons">
+             <a href="https://www.linkedin.com/in/jessica-everard-bb0102195/" target="_blank">
+                <button class="socialbutton">LinkedIn</button>
+             </a>
+             <a href="https://github.com/jessicaeverard" target="_blank">
+                <button class="socialbutton">GitHub</button>
+             </a>
+             <a href="" target="_blank">
+                <button class="socialbutton">CV</button>
+             </a>
+         </div>
     </div>
     </section>
     <section id="aboutme">
@@ -136,20 +160,18 @@ margin-top: 250px;
       <h2 class ="title">About me</h2>
       <p>{% random_joke %}</p>
         <div id="aboutbox">
-       <img id="aboutpic" src="{% static 'admin/img/pic.JPG' %}">
+            <img id="aboutpic" src="{% static 'admin/img/pic.JPG' %}">
               <div class="card-panel teal">
                 <span class="white-text"> 18 years old & based in London :) <br> I am an enthusiastic, driven and ambitious junior developer. <br>
-                    I love to write code and especially working with APIs. <br> I'd like to say I'm a relaxed individual (except when there is a bug).
+                    I love to write code and especially working with APIs.
                     <br> I am easy going yet intuitive, always looking on how to improve.
                 </span>
               </div>
-
-          </div>
+        </div>
     </section>
 
     <section id="experience">
       <h2 class="title"> Experience </h2>
-
     </section>
 
     <section id="projects">
