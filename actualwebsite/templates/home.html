@@ -80,12 +80,12 @@
 
     #aboutpic{
       height:400px;
-      border-radius: 50%;
+      border-radius: 10%;
     }
 
     #aboutbox{
       display: flex;
-      padding-top: 100px;
+      padding-top: 30px;
       justify-content: space-evenly;
     }
 
@@ -98,7 +98,7 @@
     }
 
     #contact{
-      background-color: lightgreen;
+      background-color: grey;
     }
 
     #nav {
@@ -112,7 +112,7 @@
     .projectcontainer{
      display: flex;
     justify-content: center;
-    margin-top: 250px;
+    margin-top: 150px;
     }
 
     #github{
@@ -154,16 +154,18 @@
     <section id="aboutme">
 
       <h2 class ="title">About me</h2>
-      <p>{% random_joke %}</p>
         <div id="aboutbox">
             <img id="aboutpic" src="{% static 'admin/img/pic.JPG' %}">
             <div class="aboutcontent">
-            <h5 class="white-text"> 18 years old & based in London :)</h5> <h5> <br> I am an enthusiastic, driven and ambitious junior developer. <br></h5>
-                    I love to write code and especially working with APIs.
-                    <br> I am easy going yet intuitive, always looking on how to improve.
+            <h5 class="black-text"> 18 years old & based in London </h5>
+                <h5><br> I am an enthusiastic, intuitive and ambitious developer who is always looking to improve. <br></h5>
+                <h6 style="padding-top:20px;">I love to write code, solve problems and especially working with APIs.</h6>
                 </h5>
             </div>
         </div>
+        <center style="padding-top:">
+         <p>{% random_joke %}</p>
+        </center>
     </section>
 
     <section id="projects">
@@ -173,7 +175,7 @@
                 <div class="col s12 m6">
                   <div class="card">
                     <div class="card-image">
-                      <img src="">
+                      <img src="{% static 'admin/img/code.jpg' %}">
                       <span class="card-title">Card Title</span>
                       <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
                     </div>
@@ -187,7 +189,7 @@
                 <div class="col s12 m6">
                   <div class="card">
                     <div class="card-image">
-                      <img src="">
+                      <img src="{% static 'admin/img/code.jpg' %}">
                       <span class="card-title">Card Title</span>
                       <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
                     </div>
@@ -201,8 +203,8 @@
     </section>
 
     <section id="contact">
-      <h2 class="title"> Contact me </h2>
-        <iframe src="https://www.powr.io/contact-form/u/18c9d3e6_1651579164#platform=iframe" style="width:100%;" height="702px" frameborder="0"></iframe>
+
+        <iframe src="https://www.powr.io/contact-form/u/18c9d3e6_1651579164#platform=iframe" style="width:100%; padding-top:30px;" height="702px" frameborder="0"></iframe>
     </section>
               <!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="static/actualwebsite/materialize/js/materialize.js"></script>
