@@ -5,7 +5,7 @@ import requests
 
 @register.simple_tag
 def random_joke():
-    url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=racist,sexist,explicit"
+    url = "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=racist,sexist,explicit"
 
     payload={}
     headers = {}
@@ -13,10 +13,13 @@ def random_joke():
     response = requests.request("GET", url, headers=headers, data=payload).json()
 
     if response['type'] == 'twopart':
-        setup = (response['setup'])
-        delivery = (response['delivery'])
-        return setup, delivery
+        raw_setup = (response['setup'])
+        raw_delivery = (response['delivery'])
+        setup = raw_setup.strip()
+        delivery = raw_delivery.strip()
+        return setup + " " + delivery
     else:
-        joke = (response['joke'])
+        result = (response['joke'])
+        joke = result.strip()
         return joke
 
