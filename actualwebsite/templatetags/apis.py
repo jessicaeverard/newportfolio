@@ -23,3 +23,14 @@ def random_joke():
         joke = result.strip()
         return joke
 
+@register.simple_tag
+def current_london_weather():
+    url = "http://api.weatherapi.com/v1/forecast.json?key=a8e94f5f4c3a4e9bab5122529220806&q=London"
+
+    payload = {}
+    headers = {}
+
+    response = requests.request("GET", url, headers=headers, data=payload).json()
+
+    current_weather = (response['current'])
+    return (current_weather['temp_c'])

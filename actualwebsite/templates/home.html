@@ -93,6 +93,10 @@
       background-color: lightblue;
     }
 
+    .aboutcontent{
+        width: 400px;
+      }
+
     #projects{
     background-color: lightpink;
     }
@@ -125,6 +129,31 @@
       background-color: brown;
      }
 
+    #pythonicon{
+       height: 50px;
+       width: 50px;
+    }
+
+    #djangoicon{
+       height: 50px;
+       width: 100px;
+    }
+
+    #apiicon{
+       height: 50px;
+       width: 50px;
+    }
+
+   #weather{
+     width: 200px;
+     }
+
+     #icons{
+       display: flex;
+       justify-content: space-evenly;
+       padding-top: 50px;
+     }
+
 
     </style>
     <section id="home">
@@ -151,8 +180,7 @@
              <a href="https://github.com/jessicaeverard" target="_blank" style="background-color:transparent;">
                 <button class="socialbutton">GitHub</button>
              </a>
-             <a href="" target="_blank" style="background-color:transparent;">
-
+             <a href="#cv" style="background-color:transparent;">
                 <button class="socialbutton">CV</button>
              </a>
          </div>
@@ -164,11 +192,20 @@
         <div id="aboutbox">
             <img id="aboutpic" src="{% static 'admin/img/pic.JPG' %}">
             <div class="aboutcontent">
-            <h5 class="black-text"> 18 years old & based in London </h5>
-                <h5><br> I am an enthusiastic, intuitive and ambitious developer who is always looking to improve. <br></h5>
-                <h6 style="padding-top:20px;">I love to write code, solve problems and especially working with APIs.</h6>
+                <h5 class="black-text"> 18 years old & based in London </h5>
+                    <h5><br> I am an enthusiastic, intuitive and ambitious developer who is always looking to improve. <br></h5>
+                    <h6 style="padding-top:20px;">I love to write code, solve problems and especially working with APIs.</h6>
                 </h5>
+                   <div id="icons">
+                     <img id="pythonicon" src="{% static 'admin/img/python.jpg' %}">
+                     <img id="djangoicon" src="{% static 'admin/img/django.png' %}">
+                     <img id="apiicon" src="{% static 'admin/img/api.png' %}">
+                   </div>
             </div>
+             <div id="weather">
+              <h5>Current weather in London: </h5>
+              <h6>{% current_london_weather %}</h6>
+             </div>
         </div>
         <center style="padding-top:50px;">
          <h6>{% random_joke %}</h6>
