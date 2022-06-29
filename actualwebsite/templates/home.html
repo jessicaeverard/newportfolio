@@ -76,6 +76,7 @@
 
     .title{
       text-align: center;
+      color: white;
     }
 
     #aboutpic{
@@ -95,6 +96,7 @@
 
     .aboutcontent{
         width: 400px;
+        border: 2px solid #969696;
       }
 
     #projects{
@@ -130,18 +132,18 @@
      }
 
     #pythonicon{
-       height: 50px;
-       width: 50px;
+       height: 60px;
+       width: 60px;
     }
 
     #djangoicon{
        height: 50px;
-       width: 100px;
+       width: 120px;
     }
 
     #apiicon{
-       height: 50px;
-       width: 50px;
+       height: 60px;
+       width: 60px;
     }
 
    #weather{
@@ -154,6 +156,14 @@
        padding-top: 50px;
      }
 
+      #aboutimg {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("static/admin/img/coding.jpg");
+      height: 1000px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
 
     </style>
     <section id="home">
@@ -186,30 +196,32 @@
          </div>
     </div>
     </section>
-    <section id="aboutme">
 
+    <section id="aboutme">
+     <div id="aboutimg">
       <h2 class ="title">About me</h2>
         <div id="aboutbox">
             <img id="aboutpic" src="{% static 'admin/img/pic.JPG' %}">
             <div class="aboutcontent">
-                <h5 class="black-text"> 18 years old & based in London </h5>
-                    <h5><br> I am an enthusiastic, intuitive and ambitious developer who is always looking to improve. <br></h5>
-                    <h6 style="padding-top:20px;">I love to write code, solve problems and especially working with APIs.</h6>
+                <h5 class="white-text"> 18 years old & based in London </h5>
+                    <h5 class="white-text"><br> I am an enthusiastic, intuitive and ambitious developer who is always looking to improve. <br></h5>
+                    <h6 class="white-text" style="padding-top:20px;">I love to write code, solve problems and especially working with APIs.</h6>
                 </h5>
                    <div id="icons">
-                     <img id="pythonicon" src="{% static 'admin/img/python.jpg' %}">
+                     <img id="pythonicon" src="{% static 'admin/img/python.png' %}">
                      <img id="djangoicon" src="{% static 'admin/img/django.png' %}">
                      <img id="apiicon" src="{% static 'admin/img/api.png' %}">
                    </div>
             </div>
              <div id="weather">
-              <h5>Current weather in London: </h5>
-              <h6>{% current_london_weather %}</h6>
+              <h5 class="white-text">Current weather in London: </h5>
+              <h6 class="white-text">{% current_london_weather %}</h6>
              </div>
         </div>
         <center style="padding-top:50px;">
-         <h6>{% random_joke %}</h6>
+         <h6 class="white-text">{% random_joke %}</h6>
         </center>
+     </div>
     </section>
 
     <section id="projects">
