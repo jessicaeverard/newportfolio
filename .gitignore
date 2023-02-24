@@ -13,3 +13,10 @@ env/pyvenv.cfg
 
 geckodriver.exe
 actualwebsite/__pycache__/
+<<<<<<< HEAD
+=======
+
+portfolio/__pycache__/
+
+*.pyc
+>>>>>>> 233194ec7a1ef7692223bbc6db07186b8d101662
