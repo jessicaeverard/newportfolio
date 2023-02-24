@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 {% load static %}
+
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,75 +21,156 @@
         scroll-snap-type: y mandatory;
     }
 
-section {
-  height: 100vh;
-  width: 100vw;
-  scroll-snap-align: start;
-}
+    section {
+      height: 100vh;
+      width: 100vw;
+      scroll-snap-align: start;
+      overflow: hidden;
+      background-color: #333333;
+    }
 
-/* The hero image */
-.hero-image {
-  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("static/admin/img/code.jpg");
+    #aboutme{
+        background-color: #333333;
+    }
 
-  /* Set a specific height */
-  height: 90%;
+      #projects{
+        background-color: #333333;
+    }
 
-  /* Position and center the image to scale nicely on all screens */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
+    .hero-image {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("static/admin/img/code.jpg");
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
 
-/* Place text in the middle of the image */
-.hero-text {
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-}
+    .hero-text {
+      text-align: center;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+    }
 
-.title{
-  text-align: center;
-}
+    .socialbuttons {
+      text-align: center;
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+    }
 
-#aboutpic{
-  height:400px;
-  }
+    .socialbutton{
+      border: 2px solid white;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      background-color: transparent;
+      cursor: pointer;
+    }
 
-#aboutbox{
-  display: flex;
-padding-top: 100px;
-justify-content: space-evenly;
+    .socialbutton:hover {
+      background-color: #bb86fc;
+      color: white;
+    }
 
-}
+    .title{
+      text-align: center;
+      color: white;
+    }
 
-#aboutme{
-  background-color: lightblue;
-  }
+    #aboutpic{
+      height:400px;
+    }
 
-#projects{
-background-color: lightpink;
-}
+    #aboutbox{
+      display: flex;
+      padding-top: 30px;
+      justify-content: space-evenly;
+    }
 
-#contact{
-  background-color: lightgreen;
-  }
+    .aboutcontent{
+        width: 450px;
+        background-color: #222222;
+        padding: 30px;
+        height: 400px;
+        border-radius: 5%;
+      }
 
+    #nav {
+    position: fixed;
+    margin-top: 0px;
+    }
+
+    .card{
+      width: 300px;
+     }
+
+    .projectcontainer{
+     display: flex;
+    justify-content: space-evenly;
+    margin-top: 90px;
+    }
+
+    #github{
+     width: 50px;
+     height: 50px;
+    }
+
+    #pythonicon{
+       height: 60px;
+       width: 60px;
+    }
+
+    #djangoicon{
+       height: 60px;
+       width: 120px;
+    }
+
+    #apiicon{
+       height: 60px;
+       width: 60px;
+    }
+
+   #weather{
+     width: 200px;
+     }
+
+     #icons{
+       display: flex;
+       justify-content: space-evenly;
+       padding-top: 50px;
+     }
+
+     .nav-wrapper{
+       background-color: #222222;
+       }
+
+    .form-style{
+      width: 700px;
+      padding-top: 60px;
+    }
 
 
     </style>
     <section id="home">
        <nav>
         <div class="nav-wrapper">
-          <ul id="nav" class="right hide-on-med-and-down">
-            <li><a href="sass.html">Home</a></li>
-            <li><a href="badges.html">About Me</a></li>
-            <li><a href="collapsible.html">Projects</a></li>
-            <li><a href="collapsible.html">Contact Me</a></li>
+          <ul id="nav" class="left hide-on-med-and-down">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#aboutme">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#cv">CV</a></li>
+            <li><a href="#contact">Contact Me</a></li>
           </ul>
         </div>
       </nav>
@@ -98,29 +180,119 @@ background-color: lightpink;
         <h1>Jess Everard</h1>
         <h5>Software Developer</h5>
       </div>
+         <div class="socialbuttons">
+             <a href="https://www.linkedin.com/in/jessica-everard-bb0102195/" target="_blank" style="background-color:transparent;">
+                <button class="socialbutton">LinkedIn</button>
+             </a>
+             <a href="https://github.com/jessicaeverard" target="_blank" style="background-color:transparent;">
+                <button class="socialbutton">GitHub</button>
+             </a>
+             <a href="#cv" style="background-color:transparent;">
+                <button class="socialbutton">CV</button>
+             </a>
+         </div>
     </div>
     </section>
-    <section id="aboutme">
 
+    <section id="aboutme">
       <h2 class ="title">About me</h2>
         <div id="aboutbox">
-       <img id="aboutpic" src="{% static 'admin/img/pic.JPG' %}">
-              <div class="card-panel teal">
-                <span class="white-text"> i can code, sort of.
-                </span>
-              </div>
-
-          </div>
+            <img id="aboutpic" src="{% static 'admin/img/pic.JPG' %}">
+            <div class="aboutcontent">
+                <h5 class="white-text"> 19 years old & based in London </h5>
+                    <h6 class="white-text"><br> I am an enthusiastic, intuitive and ambitious developer who is always looking to improve. <br></h6>
+                <h5 class="white-text" style="padding-top:20px;">I love to <span style="color:#bb86fc">write code, solve problems </span>,work with<span style="color:#bb86fc"> APIs </span>and anything to do with the<span style="color:#bb86fc"> backend.</span></h5>
+                </h5>
+                   <div id="icons">
+                     <img id="pythonicon" src="{% static 'admin/img/python-5.png' %}">
+                     <img id="djangoicon" src="{% static 'admin/img/django-logo-transparent.png' %}">
+                     <img id="apiicon" src="{% static 'admin/img/apilogo.png' %}">
+                   </div>
+            </div>
+             <div id="weather">
+              <h5 class="white-text">Current weather in London: </h5>
+              <h6 class="white-text"></h6>
+             </div>
+        </div>
+        <center style="padding-top:50px;">
+         <h6 class="white-text"></h6>
+        </center>
     </section>
 
     <section id="projects">
-        <h2 class="title"> Experience </h2>
+        <h2 class="title"> Projects </h2>
+          <div class="projectcontainer">
+           <div class="cardButton">
+            <div class="row">
+                <div class="col s12 m6">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="{% static 'admin/img/code.jpg' %}">
+                      <span class="card-title">Card Title</span>
+                    </div>
+                    <div class="card-content">
+                      <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                      <center>
+                      <div>
+                        <button class="socialbutton">Live App</button>
+                        <button class="socialbutton">The Code</button>
+                     </div>
+                     </center>
+                </div>
 
+                <div class="cardButton">
+                  <div class="row">
+                    <div class="col s12 m6">
+                      <div class="card">
+                        <div class="card-image">
+                          <img src="{% static 'admin/img/code.jpg' %}">
+                          <span class="card-title">Card Title</span>
+                        </div>
+                        <div class="card-content">
+                          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                    <center>
+                    <div>
+                        <button class="socialbutton">Live App</button>
+                        <button class="socialbutton">The Code</button>
+                     </div>
+                    </center>
+               </div>
+          </div>
+        </div>
     </section>
 
-    <section id="contact">
-      <h2 class="title"> Contact me </h2>
+    <section id="cv">
+         <h2 class="title"> CV </h2>
+        <center>
+        <iframe src="https://docs.google.com/document/d/e/2PACX-1vQbo3Jnf-_8vQ_M4PxgFIgarfwTFlw3BRprFX483U5ZMzio4G97m4Ota2SbyLM0Tg/pub?embedded=true" style="width:50%;" height="600px;"  frameborder="0"></iframe>
+        </center>
+    </section>
 
+
+    <section id="contact">
+      <center>
+        <h2 class="title"> Contact me </h2>
+        <h6 class="title" style="padding-top:10px;"> Leave your details below, and I will get back to you </h6>
+        <div class="form-style">
+          <p class="card-text">  
+          <form method="POST">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit" class="btn btn-primary">
+                Send
+              </button>
+            </form>
+          <p class="card-text">  
+          </div>
+        </center>  
     </section>
               <!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="static/actualwebsite/materialize/js/materialize.js"></script>
