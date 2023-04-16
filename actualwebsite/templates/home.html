@@ -90,21 +90,22 @@
     }
 
     #aboutpic{
-      height:400px;
+      height:200px;
     }
 
-    #aboutbox{
+    /* #aboutbox{
       display: flex;
-      padding-top: 30px;
       justify-content: space-evenly;
-    }
+      width: 800px;
+      background-color: #333333;
+      height: 100vh;
+    } */
 
     .aboutcontent{
-        width: 450px;
+        width: 100vw;
         background-color: #222222;
-        padding: 30px;
         height: 400px;
-        border-radius: 5%;
+        padding-top: 30px;
       }
 
     #nav {
@@ -161,6 +162,20 @@
       padding-top: 60px;
     }
 
+    .parallax {
+      /* The image used */
+      background-image: url("static/admin/img/code.jpg");
+
+      /* Set a specific height */
+      min-height: 500px; 
+
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
 
     </style>
     <section id="home">
@@ -196,79 +211,73 @@
     </section>
 
     <section id="aboutme">
+      <center>
+      <!-- <div id="aboutbox"> -->
       <h2 class ="title">About me</h2>
-        <div id="aboutbox">
             <img id="aboutpic" src="{% static 'admin/img/pic.JPG' %}">
             <div class="aboutcontent">
                 <h5 class="white-text"> 19 years old & based in London </h5>
-                    <h6 class="white-text"><br> I am an enthusiastic, intuitive and ambitious developer who is always looking to improve. <br></h6>
+                    <h6 class="white-text"><br> I am an enthusiastic, intuitive and ambitious developer who is always looking to upskill. <br></h6>
                 <h5 class="white-text" style="padding-top:20px;">I love to <span style="color:#bb86fc">write code, solve problems </span>,work with<span style="color:#bb86fc"> APIs </span>and anything to do with the<span style="color:#bb86fc"> backend.</span></h5>
                 </h5>
-                   <div id="icons">
+                   <!-- <div id="icons">
                      <img id="pythonicon" src="{% static 'admin/img/python-5.png' %}">
                      <img id="djangoicon" src="{% static 'admin/img/django-logo-transparent.png' %}">
                      <img id="apiicon" src="{% static 'admin/img/apilogo.png' %}">
-                   </div>
+                   </div> -->
             </div>
-             <div id="weather">
+             <!-- <div id="weather">
               <h5 class="white-text">Current weather in London: </h5>
               <h6 class="white-text"></h6>
-             </div>
-        </div>
-        <center style="padding-top:50px;">
-         <h6 class="white-text"></h6>
-        </center>
+             </div> -->
+        <!-- </div> -->
+      </center>
     </section>
+
+    <!-- <div class="parallax"></div> -->
 
     <section id="projects">
         <h2 class="title"> Projects </h2>
           <div class="projectcontainer">
+
+          {% for project in projects %}    
            <div class="cardButton">
             <div class="row">
                 <div class="col s12 m6">
                   <div class="card">
                     <div class="card-image">
-                      <img src="{% static 'admin/img/code.jpg' %}">
-                      <span class="card-title">Card Title</span>
+                      <img src="{{ project.image.url }}">
+                      <span class="card-title">{{ project.title }}</span>
                     </div>
                     <div class="card-content">
-                      <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                      <p>{{ project.description }}</p>
                     </div>
                   </div>
                 </div>
                 </div>
                       <center>
-                      <div>
+                        <div>
+                        {% if project.link_to_live_app %}
+                        <a href="{{ project.link_to_live_app }}" class="socialbutton">
+                          Live App
+                        </a>
+                        {% endif %}
+                        {% if project.link_to_code %}
+                        <a href="{{ project.link_to_code }}" class="socialbutton">
+                          The Code
+                        </a>
+                        {% endif %}
+<!--                       
                         <button class="socialbutton">Live App</button>
-                        <button class="socialbutton">The Code</button>
+                        <button class="socialbutton">The Code</button> -->
                      </div>
                      </center>
                 </div>
-
-                <div class="cardButton">
-                  <div class="row">
-                    <div class="col s12 m6">
-                      <div class="card">
-                        <div class="card-image">
-                          <img src="{% static 'admin/img/code.jpg' %}">
-                          <span class="card-title">Card Title</span>
-                        </div>
-                        <div class="card-content">
-                          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-                    <center>
-                    <div>
-                        <button class="socialbutton">Live App</button>
-                        <button class="socialbutton">The Code</button>
-                     </div>
-                    </center>
-               </div>
-          </div>
+            {% endfor %}      
         </div>
     </section>
+
+    <!-- <div class="parallax"></div> -->
 
     <section id="cv">
          <h2 class="title"> CV </h2>
@@ -277,11 +286,12 @@
         </center>
     </section>
 
+    <!-- <div class="parallax"></div> -->
 
     <section id="contact">
       <center>
         <h2 class="title"> Contact me </h2>
-        <h6 class="title" style="padding-top:10px;"> Leave your details below, and I will get back to you </h6>
+        <h6 class="title" style="padding-top:30px;"> Leave your details below, and I will get back to you </h6>
         <div class="form-style">
           <p class="card-text">  
           <form method="POST">
