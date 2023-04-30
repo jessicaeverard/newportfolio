@@ -87,13 +87,18 @@
       color: white;
     }
 
+    .socialbuttons:visited {
+      background-color: transparent;
+    }  
+
     .title{
       text-align: center;
       color: white;
     }
 
     #aboutpic{
-      height:200px;
+      height:300px;
+      padding-right: 70px;
     }
 
     .aboutcontent{
@@ -101,7 +106,7 @@
         left: 0;
         bottom: 0;
         width: 100%;
-        height: 250px;
+        height: 35%;
         position: absolute;
       }
 
@@ -109,6 +114,8 @@
     position: fixed;
     margin-top: 0px;
     }
+
+    
 
     .card{
       width: 300px;
@@ -118,31 +125,45 @@
     .projectcontainer{
      display: flex;
     justify-content: space-evenly;
-    margin-top: 90px;
-    }
 
-     .nav-wrapper{
-       background-color: #222222;
-       }
+    }
 
     .form-style{
       width: 700px;
       padding-top: 60px;
     }
 
+    .summary-box{
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: row;
+    }
+
+    .content-text{
+      padding-top: 30px;
+      width: 80%;
+    }
+
+    .summary-text{
+      width: 400px;
+    }
+
     </style>
     <section id="home">
-       <nav>
-        <div class="nav-wrapper">
-          <ul id="nav" class="left hide-on-med-and-down">
+
+       <div class="navbar-fixed">
+         <nav class="N/A transparent navbar-transition cool-navbar z-depth-0">
+          <div class="nav-wrapper">
+           <ul id="nav" class="left hide-on-med-and-down">
             <li><a href="#home">Home</a></li>
             <li><a href="#aboutme">About Me</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#cv">CV</a></li>
             <li><a href="#contact">Contact Me</a></li>
-          </ul>
-        </div>
-      </nav>
+           </ul>
+          </div>
+         </nav>
+        </div> 
 
      <div class="hero-image">
       <div class="hero-text">
@@ -166,13 +187,25 @@
     <section id="aboutme">
       <center>
       <h2 class ="title">About me</h2>
-            <img id="aboutpic" src="{% static 'admin/img/pic.JPG' %}">
-            <div class="aboutcontent">
-                <h5 class="white-text"> 19 years old & based in London </h5>
-                    <h6 class="white-text"><br> I am an enthusiastic, intuitive and ambitious developer who is always looking to upskill. <br></h6>
-                <h5 class="white-text" style="padding-top:20px;">I love to <span style="color:#bb86fc">write code, solve problems </span>,work with<span style="color:#bb86fc"> APIs </span>and anything to do with the<span style="color:#bb86fc"> backend.</span></h5>
-                </h5>
+       <div class="summary-box">
+        <div class ="summary-text">
+          <h5 class="white-text"> 19 years old & based in London </h5>
+          <h5 class="white-text"><br> I am an enthusiastic, intuitive and ambitious developer who is always looking to upskill. <br></h5>
+          <h5 class="white-text" style="padding-top:20px;">I love to <span style="color:#bb86fc">write code, solve problems, </span>work with<span style="color:#bb86fc"> APIs </span>and anything to do with the<span style="color:#bb86fc"> backend.</span></h5>
+          </h5>
+        </div>  
+         <img id="aboutpic" src="{% static 'admin/img/pic.JPG' %}">
+       </div>
+          <div class="aboutcontent">
+            <div class="content-text">
+            <h6 class="white-text"> I have been learning coding since the age of 11, ever since I made my first python script I have been facisinated by the world of programing. I left school at
+              16 to do a level 3 software development apprenticeship, which also involved teaching python to children and adults. I have now completed my level 4 apprenticeship in software development and at my most confident in my skills, being able to 
+            develop full-stack applications using django independantly. I am continuing to self learn more complex techniques and hope to work with more people! </h6><br>
+            <h6 class="white-text">Besides from coding, in my free time I enjoy kickboxing alot. Currently working towards my purple belt, meaning that I am half way though my black belt.
+              A keen interest of mine is also travelling, whether it be with friends or solo I love exploring new places and meeting new people.
+            </h6>
             </div>
+          </div>
       </center>
     </section>
 
@@ -218,7 +251,8 @@
     <section id="cv">
          <h2 class="title"> CV </h2>
         <center>
-        <iframe src="https://docs.google.com/document/d/e/2PACX-1vQbo3Jnf-_8vQ_M4PxgFIgarfwTFlw3BRprFX483U5ZMzio4G97m4Ota2SbyLM0Tg/pub?embedded=true" style="width:50%;" height="600px;"  frameborder="0"></iframe>
+          <iframe src="https://docs.google.com/document/d/e/2PACX-1vQNWboCovnNN6qfVi6exvBngoTJxb4IcbOMpvYP7Ve3uFHluYniRRBt0XMwXeYNMQ/pub?embedded=true" 
+          style="width:50%;" height="600px;"  frameborder="0"></iframe>
         </center>
     </section>
 
