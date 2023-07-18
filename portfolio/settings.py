@@ -17,7 +17,7 @@ import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DATABASE_URL = "postgresql://postgres:RmrQtOFC7xtvppIiMyX8@containers-us-west-140.railway.app:5453/railway"
+# DATABASE_URL = "postgresql://postgres:RmrQtOFC7xtvppIiMyX8@containers-us-west-140.railway.app:5453/railway"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -28,7 +28,9 @@ SECRET_KEY = 'django-insecure--1i69l@tf%n871(f^wocfjn)_%+0jp$cplgstygnqv4iga-ktc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["jesseverard.up.railway.app", '127.0.0.1']
+
+CSRF_TRUSTED_ORIGINS = ["https://jesseverard.up.railway.app/"]
 
 
 # Application definition
@@ -90,9 +92,17 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # }
 
 #PRODUCTION
+# DATABASES = {
+#      'default': dj_database_url.config(default=DATABASE_URL,conn_max_age=500)
+#  }
+
 DATABASES = {
-     'default': dj_database_url.config(default=DATABASE_URL,conn_max_age=500)
- }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -141,8 +151,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 
-# import dj_database_url
-# db_from_env = dj_database_url.config(conn_max_age=500)
-# DATABASES['default'].update(db_from_env)
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
