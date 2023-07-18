@@ -2,7 +2,7 @@
     DJANGO Admin styles
 */
 
-@import url(fonts.css);
+@import url("fonts.css");
 
 /* VARIABLE DEFINITIONS */
 :root {
